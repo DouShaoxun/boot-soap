@@ -35,21 +35,21 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
     /**
      * 创建一个 DefaultWsdl11Definition 对象。这公开了使用 XsdSchema 的标准 WSDL 1.1。WSDL 名称将与 Bean 名称相同。
-     * @param countriesSchema
+     * @param xsdSchema
      * @return
      */
-    @Bean(name = "countries")
-    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema countriesSchema) {
+    @Bean
+    public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema xsdSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("CountriesPort");
+        wsdl11Definition.setPortTypeName("FilePort");
         wsdl11Definition.setLocationUri("/ws");
         wsdl11Definition.setTargetNamespace("http://www.baeldung.com/springsoap/gen");
-        wsdl11Definition.setSchema(countriesSchema);
+        wsdl11Definition.setSchema(xsdSchema);
         return wsdl11Definition;
     }
 
     @Bean
-    public XsdSchema countriesSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("countries.xsd"));
+    public XsdSchema uploadSchema() {
+        return new SimpleXsdSchema(new ClassPathResource("upload.xsd"));
     }
 }
