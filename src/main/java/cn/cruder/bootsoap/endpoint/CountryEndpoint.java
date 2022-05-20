@@ -1,5 +1,6 @@
-package cn.cruder.bootsoap;
+package cn.cruder.bootsoap.endpoint;
 
+import cn.cruder.bootsoap.repository.CountryRepository;
 import com.baeldung.springsoap.gen.GetCountryRequest;
 import com.baeldung.springsoap.gen.GetCountryResponse;
 import org.springframework.beans.factory.annotation.Autowired;

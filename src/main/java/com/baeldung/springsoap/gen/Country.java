@@ -16,9 +16,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>country complex type的 Java 类。
- * 
+ *
  * <p>以下模式片段指定包含在此类中的预期内容。
- * 
+ *
  * <pre>
  * &lt;complexType name="country">
  *   &lt;complexContent>
@@ -33,15 +33,13 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "country", propOrder = {
-    "name",
-    "population",
-    "capital",
-    "currency"
+        "name",
+        "population",
+        "capital",
+        "currency"
 })
 public class Country {
 
@@ -55,11 +53,9 @@ public class Country {
 
     /**
      * 获取name属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getName() {
         return name;
@@ -67,11 +63,9 @@ public class Country {
 
     /**
      * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;
@@ -79,7 +73,6 @@ public class Country {
 
     /**
      * 获取population属性的值。
-     * 
      */
     public int getPopulation() {
         return population;
@@ -87,7 +80,6 @@ public class Country {
 
     /**
      * 设置population属性的值。
-     * 
      */
     public void setPopulation(int value) {
         this.population = value;
@@ -95,11 +87,9 @@ public class Country {
 
     /**
      * 获取capital属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getCapital() {
         return capital;
@@ -107,11 +97,9 @@ public class Country {
 
     /**
      * 设置capital属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setCapital(String value) {
         this.capital = value;
@@ -119,11 +107,9 @@ public class Country {
 
     /**
      * 获取currency属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link Currency }
-     *     
+     *
+     * @return possible object is
+     * {@link Currency }
      */
     public Currency getCurrency() {
         return currency;
@@ -131,11 +117,9 @@ public class Country {
 
     /**
      * 设置currency属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Currency }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Currency }
      */
     public void setCurrency(Currency value) {
         this.currency = value;

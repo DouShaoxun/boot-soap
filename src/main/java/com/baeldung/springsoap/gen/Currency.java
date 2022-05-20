@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>currency的 Java 类。
- * 
+ *
  * <p>以下模式片段指定包含在此类中的预期内容。
  * <p>
  * <pre>
@@ -26,7 +26,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/restriction>
  * &lt;/simpleType>
  * </pre>
- * 
  */
 @XmlType(name = "currency")
 @XmlEnum

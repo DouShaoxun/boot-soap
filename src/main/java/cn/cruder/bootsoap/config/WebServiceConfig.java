@@ -1,4 +1,4 @@
-package cn.cruder.bootsoap;
+package cn.cruder.bootsoap.config;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;

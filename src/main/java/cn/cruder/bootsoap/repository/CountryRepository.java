@@ -1,4 +1,4 @@
-package cn.cruder.bootsoap;
+package cn.cruder.bootsoap.repository;
 
 import com.baeldung.springsoap.gen.Country;
 import org.springframework.stereotype.Component;
