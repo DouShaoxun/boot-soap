@@ -14,13 +14,13 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
  */
 @Endpoint
 @Slf4j
-public class CountryEndpoint {
+public class FileManagerEndpoint {
 
     private static final String NAMESPACE_URI = "http://www.baeldung.com/springsoap/gen";
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "uploadFileRequest")
     @ResponsePayload
-    public UploadFileResponse getCountry(@RequestPayload UploadFileRequest request) {
+    public UploadFileResponse uploadFile(@RequestPayload UploadFileRequest request) {
         UploadFileResponse response = new UploadFileResponse();
 
         String property = System.getProperty("user.dir");
