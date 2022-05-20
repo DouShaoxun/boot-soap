@@ -1,0 +1,43 @@
+{
+	"info": {
+		"_postman_id": "367c975a-60c4-4177-8139-9e9bdf352202",
+		"name": "boot-soap",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "uploadFile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:gs=\"cn.cruder.bootsoap.namespace\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <gs:uploadFileRequest>\r\n            <gs:name>Spain</gs:name>\r\n            <gs:file>s12fdsf</gs:file>\r\n        </gs:uploadFileRequest>\r\n    </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8678/ws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8678",
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
