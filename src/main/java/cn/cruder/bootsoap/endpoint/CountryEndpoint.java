@@ -1,7 +1,7 @@
 package cn.cruder.bootsoap.endpoint;
 
-import com.baeldung.springsoap.gen.GetCountryRequest;
-import com.baeldung.springsoap.gen.GetCountryResponse;
+import cn.cruder.bootsoap.soap.upload.UploadFileRequest;
+import cn.cruder.bootsoap.soap.upload.UploadFileResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
@@ -18,10 +18,10 @@ public class CountryEndpoint {
 
     private static final String NAMESPACE_URI = "http://www.baeldung.com/springsoap/gen";
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
+    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "uploadFileRequest")
     @ResponsePayload
-    public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) {
-        GetCountryResponse response = new GetCountryResponse();
+    public UploadFileResponse getCountry(@RequestPayload UploadFileRequest request) {
+        UploadFileResponse response = new UploadFileResponse();
 
         String property = System.getProperty("user.dir");
         log.info("user.dir:{}", property);

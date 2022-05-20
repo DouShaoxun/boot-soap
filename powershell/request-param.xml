@@ -2,9 +2,9 @@
                   xmlns:gs="http://www.baeldung.com/springsoap/gen">
     <soapenv:Header/>
     <soapenv:Body>
-        <gs:getCountryRequest>
+        <gs:uploadFileRequest>
             <gs:name>Spain</gs:name>
             <gs:file>s12fdsf</gs:file>
-        </gs:getCountryRequest>
+        </gs:uploadFileRequest>
     </soapenv:Body>
 </soapenv:Envelope>

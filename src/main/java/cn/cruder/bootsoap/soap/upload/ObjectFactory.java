@@ -6,7 +6,7 @@
 //
 
 
-package com.baeldung.springsoap.gen;
+package cn.cruder.bootsoap.soap.upload;
 
 import javax.xml.bind.annotation.XmlRegistry;
 
@@ -37,19 +37,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCountryRequest }
+     * Create an instance of {@link UploadFileRequest }
      * 
      */
-    public GetCountryRequest createGetCountryRequest() {
-        return new GetCountryRequest();
+    public UploadFileRequest createGetCountryRequest() {
+        return new UploadFileRequest();
     }
 
     /**
-     * Create an instance of {@link GetCountryResponse }
+     * Create an instance of {@link UploadFileResponse }
      * 
      */
-    public GetCountryResponse createGetCountryResponse() {
-        return new GetCountryResponse();
+    public UploadFileResponse createGetCountryResponse() {
+        return new UploadFileResponse();
     }
 
 }

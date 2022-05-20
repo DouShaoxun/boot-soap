@@ -6,7 +6,7 @@
 //
 
 
-package com.baeldung.springsoap.gen;
+package cn.cruder.bootsoap.soap.upload;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -42,8 +42,8 @@ import javax.xml.bind.annotation.XmlType;
     "name",
     "size"
 })
-@XmlRootElement(name = "getCountryResponse")
-public class GetCountryResponse {
+@XmlRootElement(name = "uploadFileResponse")
+public class UploadFileResponse {
 
     @XmlElement(required = true)
     protected String fileRef;
