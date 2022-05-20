@@ -5,5 +5,5 @@
 // 生成时间: 2022.05.20 时间 02:25:30 PM CST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "http://www.baeldung.com/springsoap/gen", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(namespace = "cn.cruder.bootsoap.namespace", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package cn.cruder.bootsoap.soap.upload;

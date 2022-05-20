@@ -16,7 +16,7 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @Slf4j
 public class FileManagerEndpoint {
 
-    private static final String NAMESPACE_URI = "http://www.baeldung.com/springsoap/gen";
+    private static final String NAMESPACE_URI = "cn.cruder.bootsoap.namespace";
 
     @PayloadRoot(namespace = NAMESPACE_URI, localPart = "uploadFileRequest")
     @ResponsePayload

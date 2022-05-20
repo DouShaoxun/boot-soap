@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.baeldung.com/springsoap/gen"
-           targetNamespace="http://www.baeldung.com/springsoap/gen" elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="cn.cruder.bootsoap.namespace"
+           targetNamespace="cn.cruder.bootsoap.namespace" elementFormDefault="qualified">
 
     <xs:element name="uploadFileRequest">
         <xs:complexType>

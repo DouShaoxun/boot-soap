@@ -40,12 +40,12 @@ public class WebServiceConfig extends WsConfigurerAdapter {
      */
     @Bean
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema xsdSchema) {
-        DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-        wsdl11Definition.setPortTypeName("FilePort");
-        wsdl11Definition.setLocationUri("/ws");
-        wsdl11Definition.setTargetNamespace("http://www.baeldung.com/springsoap/gen");
-        wsdl11Definition.setSchema(xsdSchema);
-        return wsdl11Definition;
+        DefaultWsdl11Definition definition = new DefaultWsdl11Definition();
+        definition.setPortTypeName("FilePort");
+        definition.setLocationUri("/ws");
+        definition.setTargetNamespace("cn.cruder.bootsoap.namespace");
+        definition.setSchema(xsdSchema);
+        return definition;
     }
 
     @Bean
