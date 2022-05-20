@@ -4,6 +4,7 @@
     <soapenv:Body>
         <gs:getCountryRequest>
             <gs:name>Spain</gs:name>
+            <gs:file>s12fdsf</gs:file>
         </gs:getCountryRequest>
     </soapenv:Body>
 </soapenv:Envelope>
