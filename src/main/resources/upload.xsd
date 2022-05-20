@@ -6,7 +6,7 @@
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="name" type="xs:string"/>
-                <xs:element name="file" type="xs:base64Binary"/>
+                <xs:element name="file" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
@@ -16,7 +16,7 @@
             <xs:sequence>
                 <xs:element name="fileRef" type="xs:string"/>
                 <xs:element name="name" type="xs:string"/>
-                <xs:element name="size" type="xs:int"/>
+                <xs:element name="size" type="xs:long"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>anonymous complex type的 Java 类。
- * 
+ *
  * <p>以下模式片段指定包含在此类中的预期内容。
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -33,14 +33,12 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "fileRef",
-    "name",
-    "size"
+        "fileRef",
+        "name",
+        "size"
 })
 @XmlRootElement(name = "uploadFileResponse")
 public class UploadFileResponse {
@@ -49,15 +47,13 @@ public class UploadFileResponse {
     protected String fileRef;
     @XmlElement(required = true)
     protected String name;
-    protected int size;
+    protected long size;
 
     /**
      * 获取fileRef属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFileRef() {
         return fileRef;
@@ -65,11 +61,9 @@ public class UploadFileResponse {
 
     /**
      * 设置fileRef属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFileRef(String value) {
         this.fileRef = value;
@@ -77,11 +71,9 @@ public class UploadFileResponse {
 
     /**
      * 获取name属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getName() {
         return name;
@@ -89,11 +81,9 @@ public class UploadFileResponse {
 
     /**
      * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;
@@ -101,17 +91,15 @@ public class UploadFileResponse {
 
     /**
      * 获取size属性的值。
-     * 
      */
-    public int getSize() {
+    public long getSize() {
         return size;
     }
 
     /**
      * 设置size属性的值。
-     * 
      */
-    public void setSize(int value) {
+    public void setSize(long value) {
         this.size = value;
     }
 

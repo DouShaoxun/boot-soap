@@ -17,9 +17,9 @@ import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>anonymous complex type的 Java 类。
- * 
+ *
  * <p>以下模式片段指定包含在此类中的预期内容。
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -32,29 +32,36 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name",
-    "file"
+        "name",
+        "file"
 })
 @XmlRootElement(name = "uploadFileRequest")
 public class UploadFileRequest {
-
+    /**
+     * 文件名必传,且带有文件后缀
+     * <br/>
+     * 例如:
+     * <br/>
+     * LibreOffice5-3.pdf
+     */
     @XmlElement(required = true)
     protected String name;
+
+    /**
+     * byte[] 后 Base64编码
+     */
     @XmlElement(required = true)
-    protected byte[] file;
+    protected String file;
+
 
     /**
      * 获取name属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getName() {
         return name;
@@ -62,11 +69,9 @@ public class UploadFileRequest {
 
     /**
      * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;
@@ -74,23 +79,21 @@ public class UploadFileRequest {
 
     /**
      * 获取file属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     byte[]
+     *
+     * @return possible object is
+     * byte[]
      */
-    public byte[] getFile() {
+    public String getFile() {
         return file;
     }
 
     /**
      * 设置file属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     byte[]
+     *
+     * @param value allowed object is
+     *              byte[]
      */
-    public void setFile(byte[] value) {
+    public void setFile(String value) {
         this.file = value;
     }
 
