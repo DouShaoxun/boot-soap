@@ -35,6 +35,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
     /**
      * 创建一个 DefaultWsdl11Definition 对象。这公开了使用 XsdSchema 的标准 WSDL 1.1。WSDL 名称将与 Bean 名称相同。
+     *
      * @param xsdSchema
      * @return
      */

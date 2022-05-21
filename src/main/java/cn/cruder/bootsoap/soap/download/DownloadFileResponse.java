@@ -13,9 +13,9 @@ import javax.xml.bind.annotation.*;
 
 /**
  * <p>anonymous complex type的 Java 类。
- * 
+ *
  * <p>以下模式片段指定包含在此类中的预期内容。
- * 
+ *
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
@@ -29,14 +29,12 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "name",
-    "file",
-    "size"
+        "name",
+        "file",
+        "size"
 })
 @XmlRootElement(name = "downloadFileResponse")
 public class DownloadFileResponse {
@@ -49,11 +47,9 @@ public class DownloadFileResponse {
 
     /**
      * 获取name属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getName() {
         return name;
@@ -61,11 +57,9 @@ public class DownloadFileResponse {
 
     /**
      * 设置name属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setName(String value) {
         this.name = value;
@@ -73,11 +67,9 @@ public class DownloadFileResponse {
 
     /**
      * 获取file属性的值。
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getFile() {
         return file;
@@ -85,11 +77,9 @@ public class DownloadFileResponse {
 
     /**
      * 设置file属性的值。
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setFile(String value) {
         this.file = value;
@@ -97,7 +87,6 @@ public class DownloadFileResponse {
 
     /**
      * 获取size属性的值。
-     * 
      */
     public long getSize() {
         return size;
@@ -105,7 +94,6 @@ public class DownloadFileResponse {
 
     /**
      * 设置size属性的值。
-     * 
      */
     public void setSize(long value) {
         this.size = value;
