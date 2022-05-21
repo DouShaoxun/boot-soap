@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "367c975a-60c4-4177-8139-9e9bdf352202",
 		"name": "boot-soap",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7690987"
 	},
 	"item": [
 		{
@@ -18,7 +19,41 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                  xmlns:gs=\"cn.cruder.bootsoap.namespace\">\r\n    <soapenv:Header/>\r\n    <soapenv:Body>\r\n        <gs:uploadFileRequest>\r\n            <gs:name>Spain</gs:name>\r\n            <gs:file>s12fdsf</gs:file>\r\n        </gs:uploadFileRequest>\r\n    </soapenv:Body>\r\n</soapenv:Envelope>",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:gs=\"cn.cruder.bootsoap.namespace\">\r\n<soapenv:Header/>\r\n<soapenv:Body>\r\n<gs:uploadFileRequest>\r\n<gs:name>Docker可视化工具LazyDocker.md</gs:name>\r\n <gs:file>IyMjIExpbnV45LiL5a6J6KOFRG9ja2Vy5Y+v6KeG5YyW5bel5YW3TGF6eURvY2tlcg0KDQojIyMjIOS4i+i9veWuieijheWMhQ0KDQpgYGBzaA0Kd2dldCBodHRwczovL2dpdGh1Yi5jb20vamVzc2VkdWZmaWVsZC9sYXp5ZG9ja2VyL3JlbGVhc2VzL2Rvd25sb2FkL3YwLjEyL2xhenlkb2NrZXJfMC4xMl9MaW51eF94ODZfNjQudGFyLmd6DQpgYGANCg0KIyMjIyDliJvlu7rnm67lvZUNCg0KYGBgc2gNCm1rZGlyIC1wIC9vcHQvbGF6eWRvY2tlcg0KYGBgDQoNCiMjIyMg6Kej5Y6L5Yiw5oyH5a6a55uu5b2VDQoNCmBgYA0KdGFyIC16eHZmIGxhenlkb2NrZXJfMC4xMl9MaW51eF94ODZfNjQudGFyLmd6IC1DIC9vcHQvbGF6eWRvY2tlciANCmBgYA0KDQrliJvlu7rova/pk77mjqUNCg0KYGBgDQpsbiAtcyAvb3B0L2xhenlkb2NrZXIvbGF6eWRvY2tlciBsYXp5ZG9ja2VyDQpgYGANCg0K56e75Yqo5YiwYmlu55uu5b2V5LiLDQoNCmBgYHNoDQptdiBsYXp5ZG9ja2VyIC91c3IvbG9jYWwvYmluDQpgYGANCg0K</gs:file>\r\n </gs:uploadFileRequest>\r\n </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8678/ws",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8678",
+					"path": [
+						"ws"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "downloadFile",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:gs=\"cn.cruder.bootsoap.namespace\">\r\n<soapenv:Header/>\r\n<soapenv:Body>\r\n<gs:downloadFileRequest>\r\n<gs:fileRef>6b9f5241-7290-4ccd-90f2-69fff634bcd9</gs:fileRef>\r\n</gs:downloadFileRequest>\r\n</soapenv:Body>\r\n</soapenv:Envelope>",
 					"options": {
 						"raw": {
 							"language": "xml"
