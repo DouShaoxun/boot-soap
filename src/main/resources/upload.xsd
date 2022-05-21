@@ -22,4 +22,24 @@
     </xs:element>
 
 
+    <!--下载-->
+    <xs:element name="downloadFileRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="fileRef" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="downloadFileResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="file" type="xs:string"/>
+                <xs:element name="size" type="xs:long"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
 </xs:schema>

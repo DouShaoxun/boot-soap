@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:gs="cn.cruder.bootsoap.namespace">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:downloadFileRequest>
+            <gs:fileRef>c2f0fcc9-b3c5-47fe-8b47-625647345873</gs:fileRef>
+        </gs:downloadFileRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
