@@ -2,105 +2,85 @@
 // 此文件是由 JavaTM Architecture for XML Binding (JAXB) 引用实现 v2.2.7 生成的
 // 请访问 <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // 在重新编译源模式时, 对此文件的所有修改都将丢失。
-// 生成时间: 2022.05.20 时间 02:25:30 PM CST 
+// 生成时间: 2022.05.21 时间 05:26:11 PM CST 
 //
 
 
 package cn.cruder.bootsoap.soap.upload;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
 
 /**
  * <p>anonymous complex type的 Java 类。
- *
+ * 
  * <p>以下模式片段指定包含在此类中的预期内容。
- *
+ * 
  * <pre>
  * &lt;complexType>
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="fileRef" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="size" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="code" type="{http://www.w3.org/2001/XMLSchema}long"/>
+ *         &lt;element name="result" type="{cn.cruder.bootsoap.namespace}uploadFileResult"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
+ * 
+ * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-        "fileRef",
-        "name",
-        "size"
+    "code",
+    "result"
 })
 @XmlRootElement(name = "uploadFileResponse")
 public class UploadFileResponse {
 
+    protected long code;
     @XmlElement(required = true)
-    protected String fileRef;
-    @XmlElement(required = true)
-    protected String name;
-    protected long size;
+    protected UploadFileResult result;
 
     /**
-     * 获取fileRef属性的值。
-     *
-     * @return possible object is
-     * {@link String }
+     * 获取code属性的值。
+     * 
      */
-    public String getFileRef() {
-        return fileRef;
+    public long getCode() {
+        return code;
     }
 
     /**
-     * 设置fileRef属性的值。
-     *
-     * @param value allowed object is
-     *              {@link String }
+     * 设置code属性的值。
+     * 
      */
-    public void setFileRef(String value) {
-        this.fileRef = value;
+    public void setCode(long value) {
+        this.code = value;
     }
 
     /**
-     * 获取name属性的值。
-     *
-     * @return possible object is
-     * {@link String }
+     * 获取result属性的值。
+     * 
+     * @return
+     *     possible object is
+     *     {@link UploadFileResult }
+     *     
      */
-    public String getName() {
-        return name;
+    public UploadFileResult getResult() {
+        return result;
     }
 
     /**
-     * 设置name属性的值。
-     *
-     * @param value allowed object is
-     *              {@link String }
+     * 设置result属性的值。
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link UploadFileResult }
+     *     
      */
-    public void setName(String value) {
-        this.name = value;
-    }
-
-    /**
-     * 获取size属性的值。
-     */
-    public long getSize() {
-        return size;
-    }
-
-    /**
-     * 设置size属性的值。
-     */
-    public void setSize(long value) {
-        this.size = value;
+    public void setResult(UploadFileResult value) {
+        this.result = value;
     }
 
 }

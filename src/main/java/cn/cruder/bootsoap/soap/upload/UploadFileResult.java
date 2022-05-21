@@ -8,21 +8,25 @@
 
 package cn.cruder.bootsoap.soap.upload;
 
-import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>anonymous complex type的 Java 类。
+ * <p>uploadFileResult complex type的 Java 类。
  *
  * <p>以下模式片段指定包含在此类中的预期内容。
  *
  * <pre>
- * &lt;complexType>
+ * &lt;complexType name="uploadFileResult">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="fileRef" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/>
- *         &lt;element name="file" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="size" type="{http://www.w3.org/2001/XMLSchema}long"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -30,17 +34,38 @@ import javax.xml.bind.annotation.*;
  * </pre>
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "", propOrder = {
+@XmlType(name = "uploadFileResult", propOrder = {
+        "fileRef",
         "name",
-        "file"
+        "size"
 })
-@XmlRootElement(name = "uploadFileRequest")
-public class UploadFileRequest {
+public class UploadFileResult {
 
     @XmlElement(required = true)
-    protected String name;
+    protected String fileRef;
     @XmlElement(required = true)
-    protected String file;
+    protected String name;
+    protected long size;
+
+    /**
+     * 获取fileRef属性的值。
+     *
+     * @return possible object is
+     * {@link String }
+     */
+    public String getFileRef() {
+        return fileRef;
+    }
+
+    /**
+     * 设置fileRef属性的值。
+     *
+     * @param value allowed object is
+     *              {@link String }
+     */
+    public void setFileRef(String value) {
+        this.fileRef = value;
+    }
 
     /**
      * 获取name属性的值。
@@ -63,23 +88,17 @@ public class UploadFileRequest {
     }
 
     /**
-     * 获取file属性的值。
-     *
-     * @return possible object is
-     * {@link String }
+     * 获取size属性的值。
      */
-    public String getFile() {
-        return file;
+    public long getSize() {
+        return size;
     }
 
     /**
-     * 设置file属性的值。
-     *
-     * @param value allowed object is
-     *              {@link String }
+     * 设置size属性的值。
      */
-    public void setFile(String value) {
-        this.file = value;
+    public void setSize(long value) {
+        this.size = value;
     }
 
 }

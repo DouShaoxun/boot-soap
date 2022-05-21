@@ -49,8 +49,10 @@ class EndpointTests {
             JSONObject envelopeJ = (JSONObject) entries.get("SOAP-ENV:Envelope");
             JSONObject bodyJ = (JSONObject) envelopeJ.get("SOAP-ENV:Body");
             JSONObject uploadFileResponse = (JSONObject) bodyJ.get("ns2:uploadFileResponse");
-            String fileRef = (String) uploadFileResponse.get("ns2:fileRef");
-            log.info("fileRef:{}", fileRef);
+            JSONObject result = (JSONObject) uploadFileResponse.get("ns2:result");
+            String fileRef = (String) result.get("ns2:fileRef");
+            Integer code = (Integer) uploadFileResponse.get("ns2:code");
+            log.info("code:{} ,fileRef:{}", code, fileRef);
             return fileRef;
         } else {
             throw new RuntimeException("request error,code:" + response.code());
@@ -70,8 +72,10 @@ class EndpointTests {
             JSONObject envelopeJ = (JSONObject) entries.get("SOAP-ENV:Envelope");
             JSONObject bodyJ = (JSONObject) envelopeJ.get("SOAP-ENV:Body");
             JSONObject uploadFileResponse = (JSONObject) bodyJ.get("ns2:downloadFileResponse");
-            String downloadFileEncode = (String) uploadFileResponse.get("ns2:file");
-            log.info("fileRef:{}", fileRef);
+            Integer code = (Integer) uploadFileResponse.get("ns2:code");
+            JSONObject result = (JSONObject) uploadFileResponse.get("ns2:result");
+            String downloadFileEncode = (String) result.get("ns2:file");
+            log.info("code:{} ,fileRef:{}, downloadFileEncode:{}", code, fileRef, downloadFileEncode);
             return downloadFileEncode;
         } else {
             throw new RuntimeException("request error,code:" + response.code());

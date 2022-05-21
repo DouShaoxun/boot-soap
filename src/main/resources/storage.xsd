@@ -14,12 +14,21 @@
     <xs:element name="uploadFileResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="fileRef" type="xs:string"/>
-                <xs:element name="name" type="xs:string"/>
-                <xs:element name="size" type="xs:long"/>
+                <xs:element name="code" type="xs:long"/>
+                <xs:element name="result" type="tns:uploadFileResult"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+
+    <xs:complexType name="uploadFileResult">
+        <xs:sequence>
+            <xs:element name="fileRef" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="size" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
 
 
     <!--下载-->
@@ -31,15 +40,25 @@
         </xs:complexType>
     </xs:element>
 
+
     <xs:element name="downloadFileResponse">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="name" type="xs:string"/>
-                <xs:element name="file" type="xs:string"/>
-                <xs:element name="size" type="xs:long"/>
+                <xs:element name="code" type="xs:long"/>
+                <xs:element name="result" type="tns:downloadFileResult"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>
+
+
+    <xs:complexType name="downloadFileResult">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="file" type="xs:string"/>
+            <xs:element name="size" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
 
 
 </xs:schema>
