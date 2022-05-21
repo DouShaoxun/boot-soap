@@ -39,6 +39,7 @@ class EndpointTests {
     private String uploadFile(String fileName, String uploadFileEncode) throws IOException {
         MediaType mediaType = MediaType.parse("text/xml; charset=utf-8");
         String content = getUploadFileRequestContent(fileName, uploadFileEncode);
+        log.info("uploadFile requestBody ... \r\n{}", XmlUtil.format(content));
         RequestBody requestBody = RequestBody.create(mediaType, content);
         Response response = getResponse(requestBody);
         if (response.isSuccessful() && response.code() == HttpStatus.HTTP_OK) {
@@ -59,6 +60,7 @@ class EndpointTests {
     private String downloadFile(String fileRef) throws IOException {
         MediaType mediaType = MediaType.parse("text/xml; charset=utf-8");
         String content = getDownloadFileRequestContent(fileRef);
+        log.info("downloadFile requestBody ... \r\n{}", XmlUtil.format(content));
         RequestBody requestBody = RequestBody.create(mediaType, content);
         Response response = getResponse(requestBody);
         if (response.isSuccessful() && response.code() == HttpStatus.HTTP_OK) {
