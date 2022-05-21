@@ -50,6 +50,6 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
     @Bean
     public XsdSchema uploadSchema() {
-        return new SimpleXsdSchema(new ClassPathResource("upload.xsd"));
+        return new SimpleXsdSchema(new ClassPathResource("storage.xsd"));
     }
 }

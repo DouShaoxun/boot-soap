@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author dousx
  */
 @SpringBootApplication
-public class BootSoapApplication {
+public class Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(BootSoapApplication.class, args);
+        SpringApplication.run(Application.class, args);
     }
 
 }

@@ -9,7 +9,6 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.XML;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
-import org.apache.commons.lang3.StringUtils;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,12 +17,12 @@ import java.io.IOException;
 
 @SpringBootTest
 @Slf4j
-class BootSoapApplicationTests {
+class EndpointTests {
     private static final String SERVER_URL = "http://localhost:8678/ws";
     private static final String CONTENT_TYPE = "text/xml; charset=utf-8";
 
     @Test
-    void contextLoads() throws IOException {
+    void fileManagerEndpointTest() throws IOException {
         String fileName = "Docker可视化工具LazyDocker.md";
         String filePath = FileStorageUtil.testDir() + fileName;
         log.info("test file path:{}", filePath);
