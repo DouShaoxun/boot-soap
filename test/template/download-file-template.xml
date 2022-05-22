@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gs="cn.cruder.bootsoap.namespace">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <gs:downloadFileRequest>
+            <!--      {fileRef}只是占位      -->
+            <gs:fileRef>{fileRef}</gs:fileRef>
+        </gs:downloadFileRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

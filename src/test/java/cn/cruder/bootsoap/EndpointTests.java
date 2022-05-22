@@ -9,10 +9,15 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.XML;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
+import org.dom4j.Document;
+import org.dom4j.DocumentException;
+import org.dom4j.Element;
+import org.dom4j.io.SAXReader;
 import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.io.File;
 import java.io.IOException;
 
 @SpringBootTest
@@ -20,9 +25,12 @@ import java.io.IOException;
 class EndpointTests {
     private static final String SERVER_URL = "http://localhost:8678/ws";
     private static final String CONTENT_TYPE = "text/xml; charset=utf-8";
+    private static final SAXReader SAX_READER = new SAXReader();
+    private static final String downloadFileTemplatePath = FileStorageUtil.testDir() + "template" + File.separator + "download-file-template.xml";
+    private static final String uploadFileTemplatePath = FileStorageUtil.testDir() + "template" + File.separator + "upload-file-template.xml";
 
     @Test
-    void fileManagerEndpointTest() throws IOException {
+    void fileManagerEndpointTest() throws IOException, DocumentException {
         String fileName = "Docker可视化工具LazyDocker.md";
         String filePath = FileStorageUtil.testDir() + fileName;
         log.info("test file path:{}", filePath);
@@ -36,7 +44,7 @@ class EndpointTests {
 
     }
 
-    private String uploadFile(String fileName, String uploadFileEncode) throws IOException {
+    private String uploadFile(String fileName, String uploadFileEncode) throws IOException, DocumentException {
         MediaType mediaType = MediaType.parse("text/xml; charset=utf-8");
         String content = getUploadFileRequestContent(fileName, uploadFileEncode);
         log.info("uploadFile requestBody ... \r\n{}", XmlUtil.format(content));
@@ -59,7 +67,7 @@ class EndpointTests {
         }
     }
 
-    private String downloadFile(String fileRef) throws IOException {
+    private String downloadFile(String fileRef) throws IOException, DocumentException {
         MediaType mediaType = MediaType.parse("text/xml; charset=utf-8");
         String content = getDownloadFileRequestContent(fileRef);
         log.info("downloadFile requestBody ... \r\n{}", XmlUtil.format(content));
@@ -102,37 +110,31 @@ class EndpointTests {
     }
 
     /**
-     * todo 模板填充
-     *
      * @param fileName 文件名
      * @param encode   base64编码后的字符串
      * @return
      */
     @NotNull
-    private String getUploadFileRequestContent(String fileName, String encode) {
-        return "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"" +
-                "\r\nxmlns:gs=\"cn.cruder.bootsoap.namespace\">" +
-                "\r\n<soapenv:Header/>\r\n<soapenv:Body>" +
-                "\r\n<gs:uploadFileRequest>" +
-                "\r\n<gs:name>" + fileName + "</gs:name>" +
-                "\r\n <gs:file>" + encode + "</gs:file>" +
-                "\r\n </gs:uploadFileRequest>" +
-                "\r\n </soapenv:Body>" +
-                "\r\n</soapenv:Envelope>";
+    private String getUploadFileRequestContent(String fileName, String encode) throws DocumentException {
+        Document document = SAX_READER.read(new File(uploadFileTemplatePath));
+        Element uploadFileRequest = document.getRootElement().element("Body").element("uploadFileRequest");
+        // 模板填充
+        Element name = uploadFileRequest.element("name");
+        name.setText(fileName);
+        Element file = uploadFileRequest.element("file");
+        file.setText(encode);
+        return document.asXML();
     }
 
 
     @NotNull
-    private String getDownloadFileRequestContent(String fileRef) {
-        return "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"" +
-                "\r\nxmlns:gs=\"cn.cruder.bootsoap.namespace\">" +
-                "\r\n<soapenv:Header/>" +
-                "\r\n<soapenv:Body>" +
-                "\r\n<gs:downloadFileRequest>" +
-                "\r\n<gs:fileRef>" + fileRef + "</gs:fileRef>" +
-                "\r\n</gs:downloadFileRequest>" +
-                "\r\n</soapenv:Body>" +
-                "\n</soapenv:Envelope>";
+    private String getDownloadFileRequestContent(String fileRef) throws DocumentException {
+        Document document = SAX_READER.read(new File(downloadFileTemplatePath));
+        Element downloadFileRequest = document.getRootElement().element("Body").element("downloadFileRequest");
+        // 模板填充
+        Element fileRefElement = downloadFileRequest.element("fileRef");
+        fileRefElement.setText(fileRef);
+        return document.asXML();
     }
 
 
