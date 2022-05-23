@@ -3,7 +3,6 @@ package cn.cruder.bootsoap.soap.upload;
 import javax.xml.bind.annotation.*;
 
 
-
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
         "code",

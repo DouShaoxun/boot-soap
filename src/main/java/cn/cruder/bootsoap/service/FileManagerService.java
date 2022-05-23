@@ -1,5 +1,6 @@
 package cn.cruder.bootsoap.service;
 
+import cn.cruder.bootsoap.constant.SoapConstants;
 import cn.cruder.bootsoap.enums.DownloadFileEnum;
 import cn.cruder.bootsoap.enums.UploadFileEnum;
 import cn.cruder.bootsoap.repository.FileRepository;
@@ -10,6 +11,7 @@ import cn.cruder.bootsoap.soap.upload.UploadFileRequest;
 import cn.cruder.bootsoap.soap.upload.UploadFileResponse;
 import cn.cruder.bootsoap.soap.upload.UploadFileResult;
 import cn.cruder.bootsoap.util.FileStorageUtil;
+import cn.cruder.bootsoap.wb.FileManagerWebService;
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.IORuntimeException;
@@ -18,6 +20,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.jws.WebService;
 import java.io.File;
 import java.util.UUID;
 
@@ -25,10 +28,12 @@ import java.util.UUID;
  * @author dousx
  * @date 2022-05-21 16:51
  */
-@Service
+@WebService(targetNamespace = SoapConstants.NAME_SPACE,
+        endpointInterface = "cn.cruder.bootsoap.wb.FileManagerWebService")
 @Slf4j
+@Service
 @AllArgsConstructor
-public class FileManagerService {
+public class FileManagerService implements FileManagerWebService {
     private final FileRepository fileRepository;
 
     /**
@@ -37,6 +42,7 @@ public class FileManagerService {
      * @param request {@link UploadFileRequest}
      * @return {@link UploadFileResponse}
      */
+    @Override
     public UploadFileResponse uploadFile(UploadFileRequest request) {
         UploadFileResponse response = new UploadFileResponse();
         try {
@@ -68,6 +74,7 @@ public class FileManagerService {
      * @param request {@link DownloadFileRequest}
      * @return {@link DownloadFileResponse}
      */
+    @Override
     public DownloadFileResponse downloadFile(DownloadFileRequest request) {
         DownloadFileResponse downloadFileResponse = new DownloadFileResponse();
         try {

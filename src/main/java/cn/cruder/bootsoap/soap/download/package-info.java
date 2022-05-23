@@ -5,5 +5,7 @@
 // 生成时间: 2022.05.21 时间 05:26:11 PM CST 
 //
 
-@javax.xml.bind.annotation.XmlSchema(namespace = "cn.cruder.bootsoap.namespace", elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
+@javax.xml.bind.annotation.XmlSchema(namespace = SoapConstants.NAME_SPACE, elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 package cn.cruder.bootsoap.soap.download;
+
+import cn.cruder.bootsoap.constant.SoapConstants;

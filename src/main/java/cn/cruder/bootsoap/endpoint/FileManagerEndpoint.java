@@ -1,5 +1,6 @@
 package cn.cruder.bootsoap.endpoint;
 
+import cn.cruder.bootsoap.constant.SoapConstants;
 import cn.cruder.bootsoap.service.FileManagerService;
 import cn.cruder.bootsoap.soap.download.DownloadFileRequest;
 import cn.cruder.bootsoap.soap.download.DownloadFileResponse;
@@ -22,19 +23,17 @@ import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 @AllArgsConstructor
 public class FileManagerEndpoint {
 
-    private static final String NAMESPACE_URI = "cn.cruder.bootsoap.namespace";
-
 
     private final FileManagerService fileManagerService;
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "uploadFileRequest")
+    @PayloadRoot(namespace = SoapConstants.NAME_SPACE, localPart = "uploadFileRequest")
     @ResponsePayload
     public UploadFileResponse uploadFile(@RequestPayload UploadFileRequest request) {
         return fileManagerService.uploadFile(request);
     }
 
 
-    @PayloadRoot(namespace = NAMESPACE_URI, localPart = "downloadFileRequest")
+    @PayloadRoot(namespace = SoapConstants.NAME_SPACE, localPart = "downloadFileRequest")
     @ResponsePayload
     public DownloadFileResponse downloadFile(@RequestPayload DownloadFileRequest request) {
         return fileManagerService.downloadFile(request);
