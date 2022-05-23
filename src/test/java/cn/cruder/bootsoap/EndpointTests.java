@@ -31,7 +31,9 @@ class EndpointTests {
 
     @Test
     void fileManagerEndpointTest() throws IOException, DocumentException {
-        String fileName = "Docker可视化工具LazyDocker.md";
+        //String fileName = "Docker可视化工具LazyDocker.md";
+        //String fileName = "Linux 全局配置 Zsh + oh-my-zsh.pdf";
+        String fileName = "Docker部署Nacos.pdf";
         String filePath = FileStorageUtil.testDir() + fileName;
         log.info("test file path:{}", filePath);
         // 上传时编码
